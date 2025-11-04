@@ -16,8 +16,8 @@ console = Console()
 
 settings = {
     'format': 'mp3',
-    'output_path': '.',
-    'cookie_file': None,
+    'output_path': 'd:\\new',
+    'cookie_file': 'c:\\Users\\Jack\\Downloads\\www.youtube.com_cookies.txt',
     'platform': 'ytmusic'
 }
 
