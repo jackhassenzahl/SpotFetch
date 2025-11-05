@@ -16,7 +16,7 @@ console = Console()
 
 settings = {
     'format': 'mp3',
-    'output_path': 'd:\\new',
+    'output_path': 'c:\\Users\\Jack\\Music\\downloaded\\new',
     'cookie_file': 'c:\\Users\\Jack\\Downloads\\www.youtube.com_cookies.txt',
     'platform': 'ytmusic'
 }
@@ -142,7 +142,9 @@ def set_output_directory():
     
     path = Prompt.ask("Enter new output directory", default=settings['output_path'])
     
-    if not os.path.exists(path):
+    if len(path) == 1 and path.isalpha:
+        settings['output_path'] = f'{path}:\\new'
+    elif not os.path.exists(path):
         if Confirm.ask(f"Directory '{path}' doesn't exist. Create it?"):
             try:
                 os.makedirs(path, exist_ok=True)
@@ -415,7 +417,8 @@ def main_menu():
             ("5", "Download from Single URL", "Download audio from a direct URL ( can be a YT video url or playlist )"),
             ("6", "Download from Search", "Search and download by track/artist name"),
             ("7", "Settings", "Configure format (MP3/FLAC/M4A), output directory, and cookies"),
-            ("8", "Exit", "Exit the application")
+            ("8", "Set Output Directory", f"Currently: {settings['output_path']}"),
+            ("9", "Exit", "Exit the application")
         ]
         
         table = Table(title="mp3ify Main Menu", box=box.ROUNDED, title_style="bold cyan")
@@ -431,7 +434,7 @@ def main_menu():
         
         choice = Prompt.ask(
             "Select an option",
-            choices=[str(i) for i in range(1, 9)],
+            choices=[str(i) for i in range(1, 10)] + ["exit"],
             default="1"
         )
         
@@ -450,6 +453,8 @@ def main_menu():
         elif choice == "7":
             configure_settings()
         elif choice == "8":
+            set_output_directory()
+        elif choice == "9" or choice.lower() == "exit":
             console.print("\nThank you for using mp3ify!", style="bold cyan")
             console.print("Bye Bye!!", style="bold yellow")
             sys.exit(0)
