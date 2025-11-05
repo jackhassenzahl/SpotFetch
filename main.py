@@ -23,11 +23,11 @@ settings = {
 
 art = r"""
                   _____  _   ____
- __    __  ____  /___  \|_| / ___\    __
-|  \  /  ||  _ \  ___) / _ | |_ \ \  / /
-| \ \/ / || |_) |____) \| ||  _| \ \/ /
-|_|\__/|_||  __/ \_____/|_||_|    \  /
-          |_|                     /_/
+ __    __  ____  |___  \|_| / ___\_    __
+|  \  /  ||  _ \  ___) / _ | |_  \ \  / /
+| \ \/ / || |_) | ___) \| ||  _|  \ \/ /
+|_|\__/|_||  __/ |_____/|_||_|     \  /
+          |_|                      /_/
                                                                                             
 """
 
@@ -418,7 +418,7 @@ def main_menu():
             ("6", "Download from Search", "Search and download by track/artist name"),
             ("7", "Settings", "Configure format (MP3/FLAC/M4A), output directory, and cookies"),
             ("8", "Set Output Directory", f"Currently: {settings['output_path']}"),
-            ("9/exit", "Exit", "Exit the application")
+            ("Exit", "Exit", "Exit the application")
         ]
         
         table = Table(title="mp3ify Main Menu", box=box.ROUNDED, title_style="bold cyan")
@@ -434,8 +434,9 @@ def main_menu():
         
         choice = Prompt.ask(
             "Select an option",
-            choices=[str(i) for i in range(1, 10)] + ["exit"],
-            default="1"
+            choices=[str(i) for i in range(1, 9)] + ["Exit"],
+            default="1",
+            case_sensitive=False
         )
         
         if choice == "1":
@@ -454,7 +455,7 @@ def main_menu():
             configure_settings()
         elif choice == "8":
             set_output_directory()
-        elif choice == "9" or choice.lower() == "exit":
+        elif choice.lower() == "exit":
             console.print("\nThank you for using mp3ify!", style="bold cyan")
             console.print("Bye Bye!!", style="bold yellow")
             sys.exit(0)
