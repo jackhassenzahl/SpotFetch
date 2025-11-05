@@ -418,7 +418,7 @@ def main_menu():
             ("6", "Download from Search", "Search and download by track/artist name"),
             ("7", "Settings", "Configure format (MP3/FLAC/M4A), output directory, and cookies"),
             ("8", "Set Output Directory", f"Currently: {settings['output_path']}"),
-            ("9", "Exit", "Exit the application")
+            ("9/exit", "Exit", "Exit the application")
         ]
         
         table = Table(title="mp3ify Main Menu", box=box.ROUNDED, title_style="bold cyan")
