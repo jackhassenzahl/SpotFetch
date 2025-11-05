@@ -22,12 +22,12 @@ settings = {
 }
 
 art = r"""
-                        ____              _   _____    _       _     
-                      / ___| _ __   ___ | |_|  ___|__| |_ ___| |__  
-                      \___ \| '_ \ / _ \| __| |_ / _ \ __/ __| '_ \ 
-                        ___)| |_) | (_) | |_|  _|  __/ || (__| | | |
-                      |____/| .__/ \___/ \__|_|  \___|\__\___|_| |_|
-                            |_|                                     
+                  _____  _   ____
+ __    __  ____  /___  \|_| / ___\    __
+|  \  /  ||  _ \  ___) / _ | |_ \ \  / /
+| \ \/ / || |_) |____) \| ||  _| \ \/ /
+|_|\__/|_||  __/ \_____/|_||_|    \  /
+          |_|                     /_/
                                                                                             
 """
 
@@ -36,7 +36,7 @@ def show_banner():
     banner_text = Text(art, style="bold cyan")
     panel = Panel(
         Align.center(banner_text),
-        title="Welcome to SpotFetch!",
+        title="Welcome to mp3ify!",
         title_align="center",
         border_style="bright_cyan",
         box=box.DOUBLE_EDGE
@@ -418,7 +418,7 @@ def main_menu():
             ("8", "Exit", "Exit the application")
         ]
         
-        table = Table(title="SpotFetch Main Menu", box=box.ROUNDED, title_style="bold cyan")
+        table = Table(title="mp3ify Main Menu", box=box.ROUNDED, title_style="bold cyan")
         table.add_column("Option", style="cyan", justify="center", width=8)
         table.add_column("Feature", style="yellow", width=30)
         table.add_column("Description", style="white")
@@ -450,7 +450,7 @@ def main_menu():
         elif choice == "7":
             configure_settings()
         elif choice == "8":
-            console.print("\nThank you for using SpotFetch!", style="bold cyan")
+            console.print("\nThank you for using mp3ify!", style="bold cyan")
             console.print("Bye Bye!!", style="bold yellow")
             sys.exit(0)
 

@@ -1,6 +1,6 @@
-# SpotFetch :
+# mp3ify :
 
-![SpotFetch Demo](./.github/demo.png)
+![mp3ify Demo](./.github/demo.png)
 
 
 A simple python program to download Music from various platfroms using yt-dlp ( The audio source is YouTube or YouTube Music ).
@@ -30,13 +30,13 @@ A simple python program to download Music from various platfroms using yt-dlp ( 
 - Clone this repository ( or just download it as a zip file and uncompress it ):
 
 ```bash
-git clone https://github.com/MrElyazid/SpotFetch.git
+git clone https://github.com/MrElyazid/mp3ify.git
 ```
 
 - then :
 
 ```bash
-cd SpotFetch
+cd mp3ify
 ```
 
 - Install `requirements.txt` ( preferably use a new virtual environement ):
@@ -108,9 +108,9 @@ If you get `ERROR: unable to download video data: HTTP Error 403: Forbidden` whe
 
 Also if using a venv, make sure you activate it before each launch of the app.
 
-## Using SpotFetch on Android :
+## Using mp3ify on Android :
 
-since SpotFetch is just a python program, you can run it on any machine with python installed, you can run it on Android via [Termux](https://f-droid.org/en/packages/com.termux/) ( you can also find Termux on Google play ), after installation follow these commands :
+since mp3ify is just a python program, you can run it on any machine with python installed, you can run it on Android via [Termux](https://f-droid.org/en/packages/com.termux/) ( you can also find Termux on Google play ), after installation follow these commands :
 
 - Upgrade your system packages :
 
@@ -129,13 +129,13 @@ pkg install git python ffmpeg
 - Clone this repo :
 
 ```bash
-git clone https://github.com/MrElyazid/SpotFetch
+git clone https://github.com/MrElyazid/mp3ify
 ```
 
 - cd into the directory :
 
 ```bash
-cd SpotFetch/
+cd mp3ify/
 ```
 - install the requirements:
 
